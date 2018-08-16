@@ -31,9 +31,9 @@ class Ujjwal {
 }
 
 class Output {
-    void printResult(ArrayList ar) {
-        for (int i = 0; i < ar.size(); i++) {
-            System.out.print(ar.get(i) + " ");
+    void printResult(ArrayList arrayOfIndex) {
+        for (int i = 0; i < arrayOfIndex.size(); i++) {
+            System.out.print(arrayOfIndex.get(i) + " ");
         }
     }
 }
