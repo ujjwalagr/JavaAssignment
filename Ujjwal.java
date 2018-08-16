@@ -1,28 +1,37 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 class Ujjwal {
     public static void main(String... k) {
-        Scanner sc = new Scanner(System.in);
-        String s, pr;
-        int t;
-        s = sc.nextLine();
-        t = sc.nextInt();
-        ArrayList<Integer> ar = new ArrayList<>();
-        ArrayList<String> prt = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        String str;
+        int test;
+        str = scan.nextLine();
+        test = scan.nextInt();
 
-        while (t > 0) {
-            prt.add(sc.next());
-            t--;
+        ArrayList<Integer> arrayOfIndex = new ArrayList<>();
+        ArrayList<String> arrayOfTaskStrings = new ArrayList<>();
+
+        while (test > 0) {
+            arrayOfTaskStrings.add(scan.next());
+            test--;
         }
-        for (String y : prt) {
-            int index = s.indexOf(y, 0);
-            while(index>=0)
-            {
-                ar.add(index);
-                index=s.indexOf(y,index+1);
+        for (String indvidualTask : arrayOfTaskStrings) {
+            int index = str.indexOf(indvidualTask, 0);
+            while (index >= 0) {
+                arrayOfIndex.add(index);
+                index = str.indexOf(indvidualTask, index + 1);
             }
         }
-        Collections.sort(ar);
+        Collections.sort(arrayOfIndex);
+        Output out = new Output();
+        out.printResult(arrayOfIndex);
+    }
+}
+
+class Output {
+    void printResult(ArrayList ar) {
         for (int i = 0; i < ar.size(); i++) {
             System.out.print(ar.get(i) + " ");
         }
